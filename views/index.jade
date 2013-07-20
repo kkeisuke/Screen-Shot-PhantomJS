@@ -1,0 +1,41 @@
+extends layout
+
+block content
+    div.navbar.navbar-inverse.navbar-fixed-top
+        div.navbar-inner
+            div.container
+                a.brand(href="#")= title
+                div.nav-collapse.collapse
+                    ul.nav.pull-right
+                        li
+                            a(href="http://phantomjs.org/", target="_blank") PhantomJS 
+    div.container
+        div.row-fluid
+            form(data-ng-submit="submit()", data-ng-controller="Main")
+                div.row-fluid
+                    div.span3
+                        select(data-ng-model="ua")
+                            option(value="PC") PC
+                            option(value="Android") Android
+                            option(value="iPhone") iPhone
+                    div.span9.input-append
+                        input.span9(type="text", data-ng-model="url", placeholder="URL's")
+                        input.btn(type="submit", value="Screenshot")
+                div.row-fluid
+                    div.span3
+                        label width {{width || 0}}px
+                        input(type="range", data-ng-model="width", min="0", max="2000", step="20")
+                    div.span3
+                        label height {{height || 0}}px
+                        input(type="range", data-ng-model="height", min="0", max="1000", step="10")
+                    div.span3
+                        label delay {{delay || 0}}ms
+                        input(type="range", data-ng-model="delay", min="0", max="5000", step="100")
+                    div.span3
+                        label pieces {{pieces || 0}}
+                        input(type="range", data-ng-model="pieces", min="1", max="100", step="1")
+                div.row-fluid
+                    hr
+                div.row-fluid
+                    div.span12
+                        image(data-ng-repeat="image in images", data-ng-src="{{image.src}}")

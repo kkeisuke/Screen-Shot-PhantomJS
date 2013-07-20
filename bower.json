@@ -1,0 +1,14 @@
+{
+  "name": "Screen Shot PhantomJS",
+  "version": "0.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "angular": "~1.0.7",
+    "bootstrap": "http://twitter.github.com/bootstrap/assets/bootstrap.zip",
+    "jquery": "~2.0.2"
+  }
+}
